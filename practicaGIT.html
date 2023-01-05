@@ -7,24 +7,48 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>1er Ejercicio:
-        Para completar este nivel, haz checkout sobre el padre del commit de bugFix. Esto va a detachear a HEAD.
+    <h1>2do Ejercicio:
+        Este nivel es bastante pesado. Aquí tienes algunas ideas para resolverlo:
+
+Tenemos tres ramas específicas -- side1 side2 and side3
+Queremos hacer push de cada una de esas ramas, en orden, al remoto
+El remoto fue actualizado, así que vamos a tener que integrar esos cambios también
+:O ¡Genial! ¡Éxito! Completar este nivel representa un gran avance.
 
 Puedes especificar el hash si quieres, pero mejor ¡trata de usar la referencia relativa!
     </h1>
     <br>
-   <h1>Para el primer ejercicio he utilizado el comando "checkout" que se utiliza para 
-     desplazarte entre las ramas creadas por git branch:
+    <h1>Situación inicial:</h1>
+    <img src="fotos/pruebaGIT2/inicialmente.jpg" width=100% height=700>
+   <h1>Para el segundo ejercicio, primero he utilizado el comando git fetch, este descarga commits, archivos y referencias
+     de un repositorio remoto a tu repositorio local. Esta acción la llevas a cabo cuando quieres ver en qué han estado trabajando los demás. 
    </h1>
    <br>
-   <img src="fotos/PRACTICA GIT/1ED.jpg" width=100% height=800>
+   <img src="fotos/pruebaGIT2/fetch.jpg" width=100% height=700 >
   <br>
-  <h1>Después he utilizado la referencia relativa "^", cada vez que le agregas eso al nombre de una referencia, le estás diciendo 
-    a git que use el padre del commit especificado:
+  <h1>Después he utilizado el comando rebase que se utiliza para fusionar mediante un cambio de base, básicamente le decimos a side1 que se fusione en o/main:
   <br><br>
-    <img src="fotos/PRACTICA GIT/1.2 ED.jpg" width=100% height=600>
+    <img src="fotos/pruebaGIT2/rebase.jpg" width=100% height=600>
 <br>
-También se podría hacer paso a paso, primero cambiariamos de rama con un simple checkout a bugFix y después usariamos la referencia relativa ^. Pero eso haría más extenso el código innecesariamente.
-  </h1>
+A continuación utilizo el mismo comando pero con diferente objetivo, ya que lo que quiero es que side2 se fusione con side1:
+<br><br>
+<img src="fotos/pruebaGIT2/rebase2.jpg" width=100% height=800>
+<br>
+De nuevo utilizo el mismo comando pero con diferente objetivo, ya que lo que pretendo ahora es que side3 se fusione con side2:
+<br><br>
+<img src="fotos/pruebaGIT2/rebase3.jpg" width=100% height=800>
+<br>
+Lo utilizo de nuevo para fusionar main con side3:
+<br><br>
+<img src="fotos/pruebaGIT2/rebase main.jpg" width=100% height=800>
+<br>
+Una vez que ya he conseguido que mi Local esté en el orden especificado en el enunciado procedo a pushear a remoto:
+<br><br>
+<img src="fotos/pruebaGIT2/push.jpg" width=100% height=800>
+<br>
+Como explicación adicional:
+El comando "push" se utiliza subir los cambios de nuestro repositorio local al remoto.
+Si lo que queremos es traer del repo remoto a nuestro local, podemos usar git pull.
+</h1>
 </body>
 </html>
